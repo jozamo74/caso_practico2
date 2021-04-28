@@ -69,14 +69,14 @@ class OperarFragment : Fragment() {
 
         btnCalculate.setOnClickListener {
             if (value1.text.isEmpty() || value2.text.isEmpty()) {
-                Toast.makeText(context,"Introduce valores en los campos", Toast.LENGTH_SHORT).show()
+                context?.toast("Introduce valores en los campos")
 
             } else {
                 val v1: Double = value1.text.toString().toDouble()
                 val v2: Double = value2.text.toString().toDouble()
 
                 if ( v2 == 0.0 && operation == "/") {
-                    Toast.makeText(context,"No se puede dividir por cero", Toast.LENGTH_SHORT).show()
+                    context?.toast("División por cero no permitida")
                 } else {
                     val operationValues: Double = when(operation){
                         "+" -> { v1 + v2 }

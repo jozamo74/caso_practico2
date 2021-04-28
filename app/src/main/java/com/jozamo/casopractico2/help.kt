@@ -1,5 +1,7 @@
 package com.jozamo.casopractico2
 
+import android.content.Context
+import android.widget.Toast
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -14,4 +16,8 @@ fun Double.roundToDecimalPlace(): Double {
         roundingMode = RoundingMode.HALF_UP
     }
     return df.format(this).toDouble()
+}
+
+fun Context?.toast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) = this?.let {
+    Toast.makeText(it, text, duration).show()
 }
