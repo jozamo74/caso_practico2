@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OperarFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:text="@string/salir" />
+
+        <Button
+            android:id="@+id/btn_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:text="@string/nueva_operaci_n" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/introudce_los_datos_para_la" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:ems="10"
+            android:hint="@string/zero"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/value2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:ems="10"
+            android:hint="@string/zero"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:hint="@string/zero" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_result"
+        style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="@string/calcular" />
+
+
+</LinearLayout>
