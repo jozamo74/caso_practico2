@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:visibility="gone"
             android:text="@string/salir" />
 
         <Button
@@ -26,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
+            android:visibility="gone"
             style="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:text="@string/nueva_operaci_n" />
     </LinearLayout>

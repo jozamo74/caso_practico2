@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.commit
 
 class OperarFragment : Fragment() {
@@ -85,6 +86,9 @@ class OperarFragment : Fragment() {
                         else -> {0.0}
                     }
                     result.text = operationValues.roundToDecimalPlace().toString()
+                    exitOk.isVisible = true
+                    new.isVisible = true
+
                 }
             }
         }
