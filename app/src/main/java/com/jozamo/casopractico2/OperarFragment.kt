@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.commit
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 
 class OperarFragment : Fragment() {
 
@@ -61,6 +63,9 @@ class OperarFragment : Fragment() {
             activity?.finish()
         }
         new.setOnClickListener {
+            val mensaje = "El resultado de la $op es ${result.text}"
+            setFragmentResult("requestKey", bundleOf("bundleKey" to mensaje))
+
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.fragment_container_view, MenuFragment())
                 //addToBackStack("operar")

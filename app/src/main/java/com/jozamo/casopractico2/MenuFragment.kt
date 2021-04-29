@@ -2,11 +2,10 @@ package com.jozamo.casopractico2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.commit
+import androidx.fragment.app.setFragmentResultListener
 
 
 class MenuFragment : Fragment(R.layout.fragment_menu) {
@@ -32,6 +31,12 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
         btnDiv.setOnClickListener {
             navegarOperar("/")
+        }
+
+        setFragmentResultListener("requestKey") { _, bundle ->
+            val result = bundle.getString("bundleKey")
+            context.toast("$result")
+
         }
     }
 
