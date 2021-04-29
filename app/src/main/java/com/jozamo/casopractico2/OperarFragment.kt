@@ -2,20 +2,15 @@ package com.jozamo.casopractico2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
-import androidx.fragment.app.commit
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 
-class OperarFragment : Fragment() {
+class OperarFragment : Fragment(R.layout.fragment_operar) {
 
     private var operation: String? = ""
     private val args: OperarFragmentArgs by navArgs()
@@ -23,20 +18,8 @@ class OperarFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*//Only assign if argument is not null
-        arguments?.let { bundle ->
-        operation = bundle.getString(OPERATION)
-        }*/
         operation = args.operation
 
-    }
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_operar, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -70,13 +53,6 @@ class OperarFragment : Fragment() {
         }
         new.setOnClickListener {
             findNavController().navigate(R.id.action_operarFragment_to_menuFragment2)
-            /*val mensaje = "El resultado de la $op es ${result.text}"
-            setFragmentResult("requestKey", bundleOf("bundleKey" to mensaje))
-
-            requireActivity().supportFragmentManager.commit {
-                replace(R.id.fragment_container_view, MenuFragment())
-                //addToBackStack("operar")
-            }*/
         }
 
         btnCalculate.setOnClickListener {
@@ -105,14 +81,4 @@ class OperarFragment : Fragment() {
             }
         }
     }
-
-    /*companion object {
-        private const val OPERATION = "operation"
-
-        fun newInstance(operation: String) =
-                OperarFragment().apply {
-                    arguments = bundleOf(OPERATION to operation)
-                }
-    }*/
-
 }

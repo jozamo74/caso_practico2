@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
-import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 
@@ -42,7 +41,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     }
 
     private fun navegarOperar(operation: String) {
-       // findNavController().navigate(R.id.action_menuFragment_to_operarFragment, bundleOf("operation" to operation))
         val action = MenuFragmentDirections.actionMenuFragmentToOperarFragment(operation)
         findNavController().navigate(action)
     }
