@@ -8,21 +8,27 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
 class OperarFragment : Fragment() {
 
     private var operation: String? = ""
+    private val args: OperarFragmentArgs by navArgs()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        operation = requireArguments().getString(OPERATION)
+        /*//Only assign if argument is not null
+        arguments?.let { bundle ->
+        operation = bundle.getString(OPERATION)
+        }*/
+        operation = args.operation
+
     }
 
     override fun onCreateView(
@@ -63,13 +69,14 @@ class OperarFragment : Fragment() {
             activity?.finish()
         }
         new.setOnClickListener {
-            val mensaje = "El resultado de la $op es ${result.text}"
+            findNavController().navigate(R.id.action_operarFragment_to_menuFragment2)
+            /*val mensaje = "El resultado de la $op es ${result.text}"
             setFragmentResult("requestKey", bundleOf("bundleKey" to mensaje))
 
             requireActivity().supportFragmentManager.commit {
                 replace(R.id.fragment_container_view, MenuFragment())
                 //addToBackStack("operar")
-            }
+            }*/
         }
 
         btnCalculate.setOnClickListener {
@@ -99,13 +106,13 @@ class OperarFragment : Fragment() {
         }
     }
 
-    companion object {
+    /*companion object {
         private const val OPERATION = "operation"
 
         fun newInstance(operation: String) =
                 OperarFragment().apply {
                     arguments = bundleOf(OPERATION to operation)
                 }
-    }
+    }*/
 
 }
